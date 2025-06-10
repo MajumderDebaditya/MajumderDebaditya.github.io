@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>say hello to world</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            align-items: center; /* Vertically center content */
+            gap: 20px; /* Space between image and text */
+            padding: 20px;
+        }
+        .image {
+            flex: 1; /* Image takes up equal space */
+            max-width: 50%; /* Adjust container width */
+            margin-left: 250px;
+            margin-top: 40px;
+        }
+        .image img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid transparent; /* Transparent to allow gradient */
+            background: linear-gradient(45deg, #248CC7, #69FAB4); /* Rainbow gradient */
+            background-clip: border-box;
+            padding: 2px; /* Space for gradient to show as border */
+            object-fit: cover;
+        }
+        .text {
+            flex: 1;
+            border: 2px solid #1e90ff; /* Blue border */
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', sans-serif; /* Apply Varela Round */
+            font-size: 16px;
+        }
+
+        .text h1 {
+            font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+        }
+        .text a {
+            font-size: 40px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+        }
+        .text p {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+    </style>
+
     <!--SCROLLBAR -->
     <style>
 
@@ -28,8 +83,8 @@
     <style>
         body {
             margin: 0;
-            color: white;
-            background: #001220;
+            color: rgb(0, 0, 0);
+            background: #E5E7EB;
         }
     </style>
 
@@ -52,13 +107,26 @@
     </style>
 
     <!--COOL LAYERED STUFF ENDS-->
+    
 </head>
 <body>
     <section>
-        <div class="spacer layer1"></div>
-        <h1>150 cutoff for Jadavpur uni poopooheads</h1>
-        <p>you get a poo and you get a poo we all get a pooooo</p>
+        <div class="container">
+        <div class="image">
+            <img src="C:\Users\majum\OneDrive\Desktop\your-image.jpeg" alt="Description of image">
+        </div>
+        <div class="text">
+            <h1>Greetings</h1>
+            <a>I am Debaditya Majumder</a>
+            <p>I am an aspiring mechanical engineer. This is a website I made to document my experiences
+                in the world of academics and beyond. I sincerely hope that this website will find its purpose
+                by helping or guiding students who are going through the same situations I faced when I was a student.
+            </p>
+        </div>
+    </div>
     </section>
+
+    
     
 </body>
 </html>
