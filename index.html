@@ -10,22 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <style>
-        .middle 
-        {
-            display: flex;
-            align-items: center; /* Vertically center content */
-            gap: 200px; /* Space between image and text */
-            padding: 20px;
+        * {
+            box-sizing: border-box; /* Prevent padding/margin issues */
+            margin: 0;
+            padding: 0;
         }
-        .left 
-        {
-            flex: 1; /* Image takes up equal space */
-            max-width: 50%; /* Adjust container width */
+
+        section {
+            flex: 1;
+            margin: 0px; /* 10px left/right margin */
+            padding: 0rem;
+        }
+        .middle {
+            display: flex;
+            align-items: stretch;
+            gap: 20px; /* Reduced from 200px */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .left {
+            flex: 1;
             border: 2px solid lightskyblue;
             border-radius: 15px;
             padding: 15px;
-            margin-left: 50px;
-            margin-top: 40px;
+            margin: 0; /* Remove fixed margins */
         }
         .right 
         {
@@ -50,12 +59,10 @@
             gap: 20px; /* Space between image and text */
             padding: 20px;
         }
-        .image 
-        {
-            flex: 1; /* Image takes up equal space */
-            max-width: 50%; /* Adjust container width */
-            margin-left: 250px;
-            margin-top: 40px;
+        .image {
+            flex: 1;
+            max-width: 50%;
+            margin-left: 8rem; /* Remove fixed margin-left */
         }
         .image img 
         {
@@ -189,22 +196,6 @@
 
     <!--COOL LAYERED STUFF-->
 
-    <style>
-        .spacer 
-        {
-            aspect-ratio: 960/400;
-            width: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-
-        }
-        .layer1 
-        {
-            background-image: url('./layered-waves-haikei.svg')
-        }
-    </style>
-
     <!--COOL LAYERED STUFF ENDS-->
 
     <style>
@@ -296,40 +287,65 @@
     }
   </style>
   <style>
-          @media (max-width: 768px) {
+         @media (max-width: 768px) {
             section {
                 margin: 0 10px;
                 padding: 0.5rem;
             }
-
             .navbar {
-                flex-direction: column; /* Stack links vertically */
+                flex-direction: column;
             }
-
             .navbar a {
                 padding: 10px;
                 font-size: 14px;
-                width: 100%; /* Full width */
+                width: 100%;
                 box-sizing: border-box;
             }
-
-            .border {
-                margin: 0 10px; /* Smaller margins */
+            .container {
+                flex-direction: column;
+                gap: 10px;
                 padding: 10px;
             }
-
-            .t h1 {
-                font-size: 36px; /* Smaller heading */
+            .image {
+                max-width: 100%;
+                margin: 20px 0 0 0;
+                text-align: center;
             }
-
-            .t a {
-                font-size: 28px; /* Smaller name */
+            .image img {
+                max-width: 200px;
             }
-
+            .text {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .text h1 {
+                font-size: 36px;
+            }
+            .text a {
+                font-size: 28px;
+            }
             .text p {
-                font-size: 16px; /* Smaller paragraph */
+                font-size: 16px;
             }
-
+            .middle {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+            .left, .right {
+                max-width: 100%;
+                padding: 10px;
+            }
+            .input-section {
+                font-size: 14px;
+            }
+            .input-section input {
+                width: 100px;
+                font-size: 14px;
+            }
+            .input-section div {
+                font-size: 14px;
+            }
             .nav a {
                 display: inline-block;
                 margin: 5px;
@@ -342,24 +358,37 @@
                 padding: 8px;
                 font-size: 12px;
             }
-
-            .border {
-                margin: 0 5px; /* Minimal margins */
-                padding: 8px;
+            .container {
+                padding: 5px;
             }
-
-            .t h1 {
+            .image img {
+                max-width: 150px;
+            }
+            .text h1 {
                 font-size: 28px;
             }
-
-            .t a {
+            .text a {
                 font-size: 22px;
             }
-
             .text p {
                 font-size: 14px;
             }
-
+            .middle {
+                padding: 5px;
+            }
+            .left, .right {
+                padding: 8px;
+            }
+            .input-section {
+                font-size: 12px;
+            }
+            .input-section input {
+                width: 80px;
+                font-size: 12px;
+            }
+            .input-section div {
+                font-size: 12px;
+            }
             .nav a {
                 font-size: 11px;
                 margin: 3px;
@@ -385,7 +414,10 @@
             </div>
             <div class="text">
                 <h1>Greetings</h1>
+                <br>
+                <br>
                 <a>I am Debaditya Majumder</a>
+                <br>
                 <p>I am an aspiring mechanical engineer. This is a website I made to document my experiences
                 in the world of academics and beyond. I sincerely hope that this website will find its purpose
                 by helping or guiding students who are going through the same situations I faced when I was a student.
