@@ -7,6 +7,35 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        .middle {
+            display: flex;
+            align-items: center; /* Vertically center content */
+            gap: 200px; /* Space between image and text */
+            padding: 20px;
+        }
+        .left {
+            flex: 1; /* Image takes up equal space */
+            max-width: 50%; /* Adjust container width */
+            border: 2px solid #fffb1e;
+            border-radius: 15px;
+            padding: 15px;
+            margin-left: 50px;
+            margin-top: 40px;
+        }
+        .right {
+            flex: 1;
+            border: 2px solid #d21eff; /* Blue border */
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 16px;
+        }
+    </style>
     <style>
         .container {
             display: flex;
@@ -38,7 +67,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-family: 'Varela Round', 'Roboto', sans-serif; /* Apply Varela Round */
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
             font-size: 16px;
         }
 
@@ -58,21 +87,67 @@
             font-weight: 400;
         }
 
+        .input-section java {
+
+            font-size: 17px;
+            font-family: 'JetBrains Mono', sans-serif;
+            font-weight: 400;
+        }
+    
+    </style>
+    <style>
+        .input-section {
+    margin: 0; /* Remove margin to eliminate space */
+}
+
+.input-section input {
+    border: none; /* Remove border */
+    border-width: 0; /* Explicitly set border width to 0 */
+    background: transparent;
+    outline: none; /* Remove outline */
+    box-shadow: none; /* Remove any browser default shadow */
+    width: 150px;
+    max-width: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: #1F2A44;
+    padding: 0; /* Remove padding */
+}
+.input-section input:focus,
+.input-section input:active {
+    border: none; /* Ensure no border on focus */
+    outline: none; /* Ensure no outline on focus */
+    box-shadow: none; /* Ensure no shadow on focus */
+}
+.input-section input::placeholder {
+    color: #6B7280;
+}
+.input-section p {
+    margin: 0; /* Remove margin to eliminate space */
+    font-size: 16px;
+    font-family: 'JetBrains Mono', sans-serif;
+    color: #1F2A44;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
     </style>
 
     <!--SCROLLBAR -->
     <style>
 
-        ::-webkit-scrollbar {
-    background-color: transparent;
-    width: 10px;
-}
+        ::-webkit-scrollbar 
+        {
+            background-color: transparent;
+            width: 10px;
+        }
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#248CC7, #69FAB4);
-    border-radius: 100px;
+        ::-webkit-scrollbar-thumb 
+        {
+            background: linear-gradient(#248CC7, #69FAB4);
+            border-radius: 100px;
 
-}
+        }       
 
     </style>
 
@@ -81,10 +156,12 @@
     <!--BACKGROUND AND FONTS-->
     
     <style>
-        body {
+        body 
+        {
             margin: 0;
             color: rgb(0, 0, 0);
             background: #E5E7EB;
+            
         }
     </style>
 
@@ -93,7 +170,8 @@
     <!--COOL LAYERED STUFF-->
 
     <style>
-        .spacer {
+        .spacer 
+        {
             aspect-ratio: 960/400;
             width: 100%;
             background-repeat: no-repeat;
@@ -101,29 +179,219 @@
             background-size: cover;
 
         }
-        .layer1 {
+        .layer1 
+        {
             background-image: url('./layered-waves-haikei.svg')
         }
     </style>
 
     <!--COOL LAYERED STUFF ENDS-->
+
+    <style>
+    /* Styling for the navigation bar */
+        .navbar 
+        {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+    /* Styling for each navigation link */
+        .navbar a 
+        {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+    /* Hover effect for links */
+        .navbar a:hover 
+        {
+            background-color: #575757;
+        }
+
+    /* Active link styling */
+        .navbar a.active 
+        {
+            background-color: #4CAF50;
+        }
+  </style>
+
+  <style>
+        .nav 
+        {
+            margin-top: auto; /* Push nav to bottom */
+            padding: 10px;
+            background-color: #3B82F6; /* Muted blue for nav background */
+            text-align: center;
+        }
+
+        .nav a 
+        {
+            color: #F5F5F5; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .nav a:hover 
+        {
+            text-decoration: underline;
+        }
+  </style>
+
+  <style>
+    .word-1
+    {
+        color: #4a9ccb
+        
+        
+    }
+
+    .word-2
+    {
+        color: #d7ab4c
+    }
+
+    .word-3
+    {
+        color: #269381
+    }
+
+    .word-4
+    {
+        color: #ce723c
+    }
+
+    .word-5
+    {
+        color: lightskyblue
+    }
+  </style>
     
 </head>
+
 <body>
     <section>
-        <div class="container">
-        <div class="image">
-            <img src="your-image.jpeg" alt="Description of image">
+        <div class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="problems.html">Problems</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
-        <div class="text">
-            <h1>Greetings</h1>
-            <a>I am Debaditya Majumder</a>
-            <p>I am an aspiring mechanical engineer. This is a website I made to document my experiences
+
+        <div class="container">
+            <div class="image">
+                <img src="your-image.jpeg" alt="Description of image">
+            </div>
+            <div class="text">
+                <h1>Greetings</h1>
+                <a>I am Debaditya Majumder</a>
+                <p>I am an aspiring mechanical engineer. This is a website I made to document my experiences
                 in the world of academics and beyond. I sincerely hope that this website will find its purpose
                 by helping or guiding students who are going through the same situations I faced when I was a student.
-            </p>
+                </p>
+            </div>
+        </div>
+
+    <div class="middle">
+        <div class="left">
+            <div class="input-section">
+                <java>
+                    <div>
+                        Try some Java for yourself!
+                    </div>
+                    <div>
+                        &nbsp;
+                    </div>
+                    <div>
+                        INPUT:
+                    </div>
+                    <div>
+                        &nbsp;
+                    </div>
+                    <div>
+                        <span class="word-1">public class </span>
+                        <span class="word-3">HelloWorld</span>
+                    </div>
+                    <div>
+                        {
+                    </div>
+                    <div>
+                        &nbsp;
+                        &nbsp;
+                        <span class="word-1">public static </span>
+                        <span class="word-3">void </span>
+                        <span class="word-2">main </span>
+                        (
+                        <span class="word-3">String</span>
+                        []
+                        <span class="word-5">args</span>
+                        )
+                    </div>
+                    <div>
+                        &nbsp;
+                        &nbsp;
+                        {
+                    </div>
+                    <div>
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        &nbsp;
+                        System.out.println("
+                        <input type="text" id="userInput" placeholder="Start typing..." oninput="updateText(this.value)">
+                        ");
+                    </div>
+                    <div>
+                        &nbsp;
+                        &nbsp;
+                        }
+                    </div>
+                    <div>
+                        }
+                    </div>
+                </java>
+            </div>
+        </div>
+        <div class="right">
+            <div class="input-section">
+                    <p>OUTPUT:</p>
+                    <p id="userText"></p>
+            </div>
         </div>
     </div>
+
+
+        <script>
+            // Text Input Handling
+            const userInput = document.getElementById("userInput");
+            const userText = document.getElementById("userText");
+
+            if (userInput && userText) 
+            {
+                userInput.addEventListener("input", function() {
+                    console.log("Input value:", userInput.value); // Debugging
+                    userText.textContent = userInput.value || "Your typed text will appear here.";
+                });
+            } 
+
+            else 
+            {
+            console.error("userInput or userText element not found.");
+            }
+
+        </script>
+
+        <div class="nav">
+            <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
     </section>
 
     
