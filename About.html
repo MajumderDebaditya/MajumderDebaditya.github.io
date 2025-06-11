@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="D.jpeg">
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            color: #000;
+            background: #E5E7EB;
+            font-family: 'Varela Round', 'Roboto', 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section {
+            flex: 1;
+            margin: 0 10px; /* 10px left/right margin */
+            padding: 1rem;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            background-color: transparent;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#248CC7, #69FAB4);
+            border-radius: 100px;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #248CC7;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-family: 'Varela Round', 'Arial', sans-serif;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+            border-radius: 15px;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            border-radius: 15px;
+        }
+
+        /* Footer nav styling */
+        .nav {
+            padding: 10px;
+            background-color: #69FAB4;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #000;
+            text-decoration: none; /* Remove default underline */
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .nav a:hover {
+            background-color: #59ddee;
+            border-radius: 15px;
+            text-decoration: none; /* Ensure no underline on hover */
+        }
+
+        /* Content styling */
+        .border {
+            margin: 0 auto; /* Center horizontally */
+            max-width: 800px; /* Limit width on large screens */
+            padding: 15px;
+            border: 2px solid #1e90ff;
+            border-radius: 15px;
+        }
+
+        .t {
+            display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+        }
+
+        .t h1 {
+            font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+        }
+
+        .t a {
+            font-size: 40px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .text {
+            display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+        }
+
+        .text p {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+            line-height: 1.5; /* Improve readability */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            section {
+                margin: 0 10px;
+                padding: 0.5rem;
+            }
+
+            .navbar {
+                flex-direction: column; /* Stack links vertically */
+            }
+
+            .navbar a {
+                padding: 10px;
+                font-size: 14px;
+                width: 100%; /* Full width */
+                box-sizing: border-box;
+            }
+
+            .border {
+                margin: 0 10px; /* Smaller margins */
+                padding: 10px;
+            }
+
+            .t h1 {
+                font-size: 36px; /* Smaller heading */
+            }
+
+            .t a {
+                font-size: 28px; /* Smaller name */
+            }
+
+            .text p {
+                font-size: 16px; /* Smaller paragraph */
+            }
+
+            .nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .border {
+                margin: 0 5px; /* Minimal margins */
+                padding: 8px;
+            }
+
+            .t h1 {
+                font-size: 28px;
+            }
+
+            .t a {
+                font-size: 22px;
+            }
+
+            .text p {
+                font-size: 14px;
+            }
+
+            .nav a {
+                font-size: 11px;
+                margin: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="About.html" class="active">About</a>
+            <a href="problems.html">Problems</a>
+            <a href="contacts.html">Contact</a>
+        </div>
+        <br>
+        <div class="border">
+            <div class="t">
+                <h1>About Me</h1>
+            </div>
+            <div class="t">
+                <a>Debaditya Majumder</a> <!-- Note: This <a> has no href; consider plain text or link -->
+            </div>
+            <div class="text">
+                <p>I am a proud graduate of Don Bosco School, Liluah, having completed my higher 
+                    secondary education in 2025. I was honoured to serve as the co-valedictorian 
+                    of my batch in both the Indian Certificate of Secondary Education (ICSE) examinations 
+                    in 2023 and the Indian School Certificate (ISC) examinations in 2025.</p>
+            </div>
+            <div class="text">
+                <p>In my schooling years, I dabbled in various extracurricular
+                    activities that piqued my interest spanning from coding and quizzing to acting and scriptwriting.
+                    In the academic year 2024–2025, I served as the President of the Literary Club, 
+                    where I collaborated closely with our Club Animators to organize events, manage finances, 
+                    and maintain a detailed record of our initiatives.</p>
+            </div>
+            <div class="text">
+                <p>To further hone my leadership and organizational skills, I took on the role of Student Coordinator 
+                    for our school’s Yearbook during the academic year 2023–2024. After eight months of dedicated work, 
+                    our team successfully launched a Cosmos-themed Yearbook featuring creative innovations 
+                    over the previous edition, with the aim of inspiring students to explore and contribute 
+                    to the literary arts.</p>
+            </div>
+            <div class="text">
+                <p>I did a Physics project on atmospheric stability and lapse rate applying core principles of thermodynamics
+                    for my high school graduation. Additionally, I was among the top 1% of students in my state
+                    in the National Standard Examination in Astronomy (NSEA).</p>
+            </div>
+            <div class="text">
+                <p>I aspire to pursue a career in Mechanical Engineering.</p>
+            </div>
+        </div>
+        <br>
+        <div class="nav">
+            © <a href="index.html">Debaditya Majumder</a>
+            <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
+        </div>
+    </section>
+</body>
+</html>

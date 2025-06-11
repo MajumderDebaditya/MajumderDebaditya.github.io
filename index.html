@@ -3,53 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>say hello to world</title>
+    <title>Debaditya Majumder</title>
+    <link rel="icon" href="D.jpeg">
 
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <style>
-        .middle {
+        .middle 
+        {
             display: flex;
             align-items: center; /* Vertically center content */
             gap: 200px; /* Space between image and text */
             padding: 20px;
         }
-        .left {
+        .left 
+        {
             flex: 1; /* Image takes up equal space */
             max-width: 50%; /* Adjust container width */
-            border: 2px solid #fffb1e;
+            border: 2px solid lightskyblue;
             border-radius: 15px;
             padding: 15px;
             margin-left: 50px;
             margin-top: 40px;
         }
-        .right {
+        .right 
+        {
             flex: 1;
-            border: 2px solid #d21eff; /* Blue border */
+            border: 2px solid lightseagreen; 
             border-radius: 15px;
             padding: 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; 
             font-size: 16px;
         }
     </style>
+
     <style>
-        .container {
+
+        .container 
+        {
             display: flex;
             align-items: center; /* Vertically center content */
             gap: 20px; /* Space between image and text */
             padding: 20px;
         }
-        .image {
+        .image 
+        {
             flex: 1; /* Image takes up equal space */
             max-width: 50%; /* Adjust container width */
             margin-left: 250px;
             margin-top: 40px;
         }
-        .image img {
+        .image img 
+        {
             max-width: 250px;
             height: auto;
             border-radius: 50%;
@@ -59,7 +68,8 @@
             padding: 2px; /* Space for gradient to show as border */
             object-fit: cover;
         }
-        .text {
+        .text 
+        {
             flex: 1;
             border: 2px solid #1e90ff; /* Blue border */
             border-radius: 15px;
@@ -71,23 +81,27 @@
             font-size: 16px;
         }
 
-        .text h1 {
+        .text h1 
+        {
             font-size: 50px;
             font-family: 'Varela Round', sans-serif;
             font-weight: 400; /* Varela Round has one weight (Regular) */
         }
-        .text a {
+        .text a 
+        {
             font-size: 40px;
             font-family: 'Varela Round', sans-serif;
             font-weight: 400;
         }
-        .text p {
+        .text p 
+        {
             font-size: 17px;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
         }
 
-        .input-section java {
+        .input-section java 
+        {
 
             font-size: 17px;
             font-family: 'JetBrains Mono', sans-serif;
@@ -95,42 +109,48 @@
         }
     
     </style>
-    <style>
-        .input-section {
-    margin: 0; /* Remove margin to eliminate space */
-}
 
-.input-section input {
-    border: none; /* Remove border */
-    border-width: 0; /* Explicitly set border width to 0 */
-    background: transparent;
-    outline: none; /* Remove outline */
-    box-shadow: none; /* Remove any browser default shadow */
-    width: 150px;
-    max-width: 100%;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 16px;
-    color: #1F2A44;
-    padding: 0; /* Remove padding */
-}
-.input-section input:focus,
-.input-section input:active {
-    border: none; /* Ensure no border on focus */
-    outline: none; /* Ensure no outline on focus */
-    box-shadow: none; /* Ensure no shadow on focus */
-}
-.input-section input::placeholder {
-    color: #6B7280;
-}
-.input-section p {
-    margin: 0; /* Remove margin to eliminate space */
-    font-size: 16px;
-    font-family: 'JetBrains Mono', sans-serif;
-    color: #1F2A44;
-    padding: 5px;
-    border-radius: 5px;
-    display: inline-block;
-}
+    <style>
+        .input-section 
+        {
+            margin: 0; /* Remove margin to eliminate space */
+        }
+
+        .input-section input 
+        {
+            border: none; /* Remove border */
+            border-width: 0; /* Explicitly set border width to 0 */
+            background: transparent;
+            outline: none; /* Remove outline */
+            box-shadow: none; /* Remove any browser default shadow */
+            width: 150px;
+            max-width: 100%;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            color: #da492f;
+            padding: 0; /* Remove padding */
+        }
+        .input-section input:focus,
+        .input-section input:active 
+        {
+            border: none; /* Ensure no border on focus */
+            outline: none; /* Ensure no outline on focus */
+            box-shadow: none; /* Ensure no shadow on focus */
+        }
+        .input-section input::placeholder 
+        {
+            color: #da492f;
+        }
+        .input-section p 
+        {
+            margin: 0; /* Remove margin to eliminate space */
+            font-size: 16px;
+            font-family: 'JetBrains Mono', sans-serif;
+            color: #1F2A44;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
     </style>
 
     <!--SCROLLBAR -->
@@ -191,7 +211,7 @@
     /* Styling for the navigation bar */
         .navbar 
         {
-            background-color: #333;
+            background-color: #248CC7;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -212,12 +232,14 @@
         .navbar a:hover 
         {
             background-color: #575757;
+            border-radius: 15px;
         }
 
     /* Active link styling */
         .navbar a.active 
         {
             background-color: #4CAF50;
+            border-radius: 15px;
         }
   </style>
 
@@ -226,13 +248,13 @@
         {
             margin-top: auto; /* Push nav to bottom */
             padding: 10px;
-            background-color: #3B82F6; /* Muted blue for nav background */
+            background-color: #69FAB4; /* Muted blue for nav background */
             text-align: center;
         }
 
         .nav a 
         {
-            color: #F5F5F5; /* White text for links */
+            color: #000000; /* White text for links */
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
@@ -240,7 +262,8 @@
 
         .nav a:hover 
         {
-            text-decoration: underline;
+            background-color: #59ddee;
+            border-radius: 15px;
         }
   </style>
 
@@ -272,6 +295,77 @@
         color: lightskyblue
     }
   </style>
+  <style>
+          @media (max-width: 768px) {
+            section {
+                margin: 0 10px;
+                padding: 0.5rem;
+            }
+
+            .navbar {
+                flex-direction: column; /* Stack links vertically */
+            }
+
+            .navbar a {
+                padding: 10px;
+                font-size: 14px;
+                width: 100%; /* Full width */
+                box-sizing: border-box;
+            }
+
+            .border {
+                margin: 0 10px; /* Smaller margins */
+                padding: 10px;
+            }
+
+            .t h1 {
+                font-size: 36px; /* Smaller heading */
+            }
+
+            .t a {
+                font-size: 28px; /* Smaller name */
+            }
+
+            .text p {
+                font-size: 16px; /* Smaller paragraph */
+            }
+
+            .nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .border {
+                margin: 0 5px; /* Minimal margins */
+                padding: 8px;
+            }
+
+            .t h1 {
+                font-size: 28px;
+            }
+
+            .t a {
+                font-size: 22px;
+            }
+
+            .text p {
+                font-size: 14px;
+            }
+
+            .nav a {
+                font-size: 11px;
+                margin: 3px;
+            }
+        }
+  </style>
     
 </head>
 
@@ -279,9 +373,10 @@
     <section>
         <div class="navbar">
             <a href="#home" class="active">Home</a>
+            <a href="About.html">About</a>
             <a href="problems.html">Problems</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            
+            <a href="contacts.html">Contact</a>
         </div>
 
         <div class="container">
@@ -327,11 +422,8 @@
                         <span class="word-1">public static </span>
                         <span class="word-3">void </span>
                         <span class="word-2">main </span>
-                        (
-                        <span class="word-3">String</span>
-                        []
-                        <span class="word-5">args</span>
-                        )
+                        (<span class="word-3">String</span>[]
+                        <span class="word-5">args</span>)
                     </div>
                     <div>
                         &nbsp;
@@ -343,7 +435,7 @@
                         &nbsp;
                         &nbsp;
                         &nbsp;
-                        System.out.println("
+                        <span class="word-5">System</span>.<span class="word-5">out</span>.<span class="word-2">println</span>("
                         <input type="text" id="userInput" placeholder="Start typing..." oninput="updateText(this.value)">
                         ");
                     </div>
@@ -361,7 +453,9 @@
         <div class="right">
             <div class="input-section">
                     <p>OUTPUT:</p>
-                    <p id="userText"></p>
+                    <div>
+                        <p id="userText"></p>
+                    </div>
             </div>
         </div>
     </div>
@@ -376,7 +470,7 @@
             {
                 userInput.addEventListener("input", function() {
                     console.log("Input value:", userInput.value); // Debugging
-                    userText.textContent = userInput.value || "Your typed text will appear here.";
+                    userText.textContent = userInput.value ;
                 });
             } 
 
@@ -388,13 +482,12 @@
         </script>
 
         <div class="nav">
+            © 
+            <a href= "index.html">Debaditya Majumder</a>
             <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
-            <a href="#contact">Contact</a>
         </div>
         
-    </section>
-
-    
+    </section>  
     
 </body>
 </html>

@@ -3,13 +3,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            About Me!
+            Contacts
         </title>
         <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
         <link rel="icon" href="D.jpeg">
-
         <style>
 
             ::-webkit-scrollbar 
@@ -71,6 +70,31 @@
                 border-radius: 15px;
             }
         </style>
+
+        <style>
+            .nav 
+            {
+                margin-top: auto; /* Push nav to bottom */
+                padding: 10px;
+                background-color: #69FAB4; /* Muted blue for nav background */
+                text-align: center;
+            }
+
+            .nav a 
+            {
+                color: #000000; /* White text for links */
+                text-decoration: none;
+                font-weight: bold;
+                margin: 0 10px;
+            }
+
+            .nav a:hover 
+            {
+                background-color: #59ddee;
+            border-radius: 15px;
+            }
+        </style>
+
         <style>
             .tex{
                 display: flex;
@@ -108,26 +132,36 @@
         </style>
 
         <style>
-            .nav 
-            {
-                margin-top: auto; /* Push nav to bottom */
-                padding: 10px;
-                background-color: #69FAB4; /* Muted blue for nav background */
-                text-align: center;
+             /* Comments section */
+            .comments {
+                justify-content: center;
+                margin-top: 1rem;
+                padding: 1rem;
+                background: #E5E7EB;
+                border-radius: 5px;
             }
 
-            .nav a 
-            {
-                color: #000000; /* White text for links */
+            /* Copy button styling */
+            .copy-btn {
+                padding: 0.5rem 1rem;
+                background: #248CC7;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-family: 'Varela Round', 'Arial', sans-serif;
+                font-size: 0.9rem;
                 text-decoration: none;
-                font-weight: bold;
-                margin: 0 10px;
+                cursor: pointer;
+                margin-top: 0.5rem;
+                transition: background 0.3s;
             }
 
-            .nav a:hover 
-            {
-                background-color: #59ddee;
-            border-radius: 15px;
+            .copy-btn:hover {
+                background: #575757;
+            }
+
+            .copy-btn.copied {
+                background: #4CAF50; /* Match active navbar */
             }
         </style>
         <style>
@@ -171,7 +205,7 @@
                 font-size: 12px;
             }
         }
-
+        
         @media (max-width: 480px) {
             .navbar a {
                 padding: 8px;
@@ -200,52 +234,128 @@
                 margin: 3px;
             }
         }
-        </style>
-    </head>
+    </style>
 
+        <style>
+        @media (max-width: 768px) {
+                .navbar {
+                    flex-direction: column; /* Stack navbar links vertically */
+                }
+
+                .navbar a {
+                    padding: 10px;
+                    font-size: 0.9rem; /* Smaller font for mobile */
+                    width: 100%; /* Full width for each link */
+                    box-sizing: border-box;
+                }
+
+                .nav a {
+                    display: inline-block; /* Allow wrapping */
+                    margin: 5px;
+                    font-size: 0.8rem;
+                }
+
+                section {
+                    margin: 0 10px; /* Maintain 10px margin */
+                    padding: 0.5rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .navbar a {
+                    padding: 8px;
+                    font-size: 0.8rem;
+                }
+
+                .nav a {
+                    font-size: 0.7rem;
+                    margin: 3px;
+                }
+            }
+        </style>
+
+
+    </head>
     <body>
         <section>
             <div class="navbar">
                 <a href="index.html">Home</a>
                 <a href="About.html">About</a>
-                <a href="problems.html"class="active">Problems</a>
+                <a href="problems.html">Problems</a>
             
-                <a href="contacts.html">Contact</a>
+                <a href="contacts.html"class="active">Contact</a>
             </div>
-            <div>
-                <br>
-                
-            
-<div class = "border">
+            <br>
+           <div class ="border">
             <div class="tex">
-                <h1>Practice Problems</h1>
-                
-                
+                <h1>Contact me at:</h1>
             </div>
+            <div class="tex">
+            <div class="comments">
+                1. majumderdebaditya@gmail.com
+                <button class="copy-btn" onclick="copyToClipboard()" aria-label="Copy preset text to clipboard">Copy Text</button>
+            </div>
+            </div>
+            <div class="tex">
+            <div>
+                2. My LinkedIn Profile:
+                <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/" class="copy-btn" aria-label="Visit LinkedIn profile">Go to LinkedIn</a>
+            </div>
+            </div>
+            
+            </div>
+        </section>
+        <br>
+        <script>
+            function copyToClipboard() {
+                const text = "majumderdebaditya@gmail.com";
+                const button = document.querySelector('.copy-btn');
 
-            <div class ="t">
-                <p>
-                    This is a collection of various questions I practiced spanning different topics when I was preparing 
-                    for various Entrance examinations to Engineering Colleges in India. I compiled the most intriguing
-                    ones from different sources available on the internet. <br>(The pdfs are created using LaTeX and hence
-                    this helps me stay up-to-date with LaTeX)
-                </p>
+                // Try Clipboard API
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        button.textContent = 'Copied!';
+                        button.classList.add('copied');
+                        setTimeout(() => {
+                            button.textContent = 'Copy Text';
+                            button.classList.remove('copied');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Clipboard API failed:', err);
+                        fallbackCopy();
+                    });
+                } else {
+                    fallbackCopy();
+                }
 
-            </div>
-            <br>
-            <br>
-            <div class = "t">
-               <a href="inte.pdf">1. Calculus</a> 
-            </div>
-            </div>
-            <br>
+                function fallbackCopy() {
+                    // Fallback using temporary textarea
+                    const tempTextarea = document.createElement('textarea');
+                    tempTextarea.value = text;
+                    document.body.appendChild(tempTextarea);
+                    tempTextarea.select();
+                    try {
+                        document.execCommand('copy');
+                        button.textContent = 'Copied!';
+                        button.classList.add('copied');
+                        setTimeout(() => {
+                            button.textContent = 'Copy Text';
+                            button.classList.remove('copied');
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Fallback copy failed:', err);
+                        alert('Copy failed. Please copy manually.');
+                    }
+                    document.body.removeChild(tempTextarea);
+                }
+            }
+        </script>
 
             <div class="nav">
                 © 
                 <a href= "index.html">Debaditya Majumder</a>
                 <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
             </div>
-
 
         </section>
 
