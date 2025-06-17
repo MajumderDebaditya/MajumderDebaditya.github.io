@@ -10,9 +10,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     
-      
+      <style>
+        /* Default light mode variables */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --link-color: #0066cc;
+            --button-bg: #f0f0f0;
+            --button-text: #000000;
+        }
 
-        
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --link-color: #66b3ff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+        }
+
+        /* Apply variables to elements */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+    </style>
     
     <style>
         * {
@@ -37,7 +93,7 @@
         }
         .left {
             flex: 1;
-            border: 2px solid orangered;
+            border: 2px solid lightskyblue;
             border-radius: 15px;
             padding: 15px;
             margin: 0; /* Remove fixed margins */
@@ -45,7 +101,7 @@
         .right 
         {
             flex: 1;
-            border: 2px solid orangered; 
+            border: 2px solid lightseagreen; 
             border-radius: 15px;
             padding: 15px;
             display: flex;
@@ -76,7 +132,7 @@
             height: auto;
             border-radius: 50%;
             border: 5px solid transparent; /* Transparent to allow gradient */
-            background: linear-gradient(45deg, orange, orangered); /* Rainbow gradient */
+            background: linear-gradient(45deg, #248CC7, #69FAB4); /* Rainbow gradient */
             background-clip: border-box;
             padding: 2px; /* Space for gradient to show as border */
             object-fit: cover;
@@ -84,7 +140,7 @@
         .text 
         {
             flex: 1;
-             /* Blue border */
+            border: 2px solid #1e90ff; /* Blue border */
             border-radius: 15px;
             padding: 15px;
             display: flex;
@@ -195,15 +251,7 @@
 
     <!--BACKGROUND AND FONTS-->
     
-    <style>
-        body 
-        {
-            margin: 0;
-            color: rgb(0, 0, 0);
-            background: #222325;
-            
-        }
-    </style>
+    
 
     <!--BACKGROUND AND FONTS END-->
 
@@ -249,26 +297,26 @@
 
   <style>
         .nav 
-            {
-                margin-top: auto; /* Push nav to bottom */
-                padding: 10px;
-                background-color: #000000; /* Muted blue for nav background */
-                text-align: center;
-            }
+        {
+            margin-top: auto; /* Push nav to bottom */
+            padding: 10px;
+            background-color: #69FAB4; /* Muted blue for nav background */
+            text-align: center;
+        }
 
-            .nav a 
-            {
-                color: #ffffff; /* White text for links */
-                text-decoration: none;
-                font-weight: bold;
-                margin: 0 10px;
-            }
+        .nav a 
+        {
+            color: #000000; /* White text for links */
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
 
-            .nav a:hover 
-            {
-                background-color: #1b2020;
+        .nav a:hover 
+        {
+            background-color: #59ddee;
             border-radius: 15px;
-            }
+        }
   </style>
 
   <style>
@@ -413,7 +461,7 @@
 
 <body>
     <section>
-        
+        <button class="toggle-button" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
         <div class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="About.html">About</a>
@@ -430,7 +478,7 @@
                 <h1>Greetings</h1>
                 <br>
                 <br>
-                <a>I am <span class="word-5">Debaditya Majumder</span> </a>
+                <a>I am Debaditya Majumder</a>
                 <br>
                 <p>I am an aspiring mechanical engineer trying to debug my way through life's challenges.
                     This site is my 1s and 0s—my binary journey—to document and share 
@@ -505,7 +553,30 @@
         </div>
     </div>
 
-    
+    <script>
+        // Function to toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText();
+        }
+
+        // Function to update button text
+        function updateButtonText() {
+            const button = document.querySelector('.toggle-button');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            button.textContent = currentTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        }
+
+        // Apply saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText();
+        });
+    </script>
 
 
         <script>
@@ -530,7 +601,7 @@
 
         <div class="nav">
             © 
-            <a href= "index.html"> © Debaditya Majumder</a>
+            <a href= "index.html">Debaditya Majumder</a>
             <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
         </div>
         

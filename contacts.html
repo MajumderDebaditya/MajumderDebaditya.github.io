@@ -30,7 +30,7 @@
             {
                 margin: 0;
                 color: rgb(0, 0, 0);
-                background: #E5E7EB;
+                background: #222325;
             }
         </style>
 
@@ -38,7 +38,7 @@
             /* Styling for the navigation bar */
             .navbar 
             {
-                background-color: #248CC7;
+                background-color: #000000;
                 overflow: hidden;
                 display: flex;
                 justify-content: center;
@@ -47,7 +47,7 @@
             /* Styling for each navigation link */
             .navbar a 
             {
-                color: white;
+                color: #fffdfd;
                 text-align: center;
                 padding: 14px 20px;
                 text-decoration: none;
@@ -76,13 +76,13 @@
             {
                 margin-top: auto; /* Push nav to bottom */
                 padding: 10px;
-                background-color: #69FAB4; /* Muted blue for nav background */
+                background-color: #000000; /* Muted blue for nav background */
                 text-align: center;
             }
 
             .nav a 
             {
-                color: #000000; /* White text for links */
+                color: #ffffff; /* White text for links */
                 text-decoration: none;
                 font-weight: bold;
                 margin: 0 10px;
@@ -90,7 +90,7 @@
 
             .nav a:hover 
             {
-                background-color: #59ddee;
+                background-color: #1b2020;
             border-radius: 15px;
             }
         </style>
@@ -101,25 +101,28 @@
             justify-content: center;
             font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
             font-size: 20px;
+            color: #e6e5e5;
             }
             .t{
                 display: flex;
             justify-content: left;
             font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
             font-size: 20px;
+            color: #e6e5e5;
             }
 
             .tex h1{
                 font-size: 50px;
             font-family: 'Varela Round', sans-serif;
             font-weight: 400; /* Varela Round has one weight (Regular) */
+            color: #e6e5e5;
             }
 
             .border
             {
                 margin-left: 200px;
                 margin-right: 200px;
-                    border: 2px solid #1e90ff; /* Blue border */
+                    border: 2px solid #1eff4f; /* Blue border */
             border-radius: 15px;
             padding: 15px;
             }
@@ -137,15 +140,15 @@
                 justify-content: center;
                 margin-top: 1rem;
                 padding: 1rem;
-                background: #E5E7EB;
+                background: #222325;
                 border-radius: 5px;
             }
 
             /* Copy button styling */
             .copy-btn {
                 padding: 0.5rem 1rem;
-                background: #248CC7;
-                color: #E5E7EB;
+                background: #575757;
+                color: lightskyblue;
                 border: none;
                 border-radius: 5px;
                 font-family: 'Varela Round', 'Arial', sans-serif;
@@ -157,7 +160,7 @@
             }
 
             .copy-btn:hover {
-                background: #575757;
+                background: #1b2020;
             }
 
             .copy-btn.copied {
@@ -293,7 +296,7 @@
             <div class="tex">
             <div class="comments">
                 1. majumderdebaditya@gmail.com
-                <button class="copy-btn" onclick="copyToClipboard()" aria-label="Copy preset text to clipboard">Copy Text</button>
+                <button class="copy-btn" onclick="copyToClipboard()" aria-label="Copy preset text to clipboard">Copy Email</button>
             </div>
             </div>
             <div class="tex">
@@ -317,7 +320,7 @@
                         button.textContent = 'Copied!';
                         button.classList.add('copied');
                         setTimeout(() => {
-                            button.textContent = 'Copy Text';
+                            button.textContent = 'Copy Email';
                             button.classList.remove('copied');
                         }, 2000);
                     }).catch(err => {
@@ -339,7 +342,7 @@
                         button.textContent = 'Copied!';
                         button.classList.add('copied');
                         setTimeout(() => {
-                            button.textContent = 'Copy Text';
+                            button.textContent = 'Copy Email';
                             button.classList.remove('copied');
                         }, 2000);
                     } catch (err) {
@@ -353,7 +356,7 @@
 
             <div class="nav">
                 © 
-                <a href= "index.html">Debaditya Majumder</a>
+                <a href= "index.html">  © Debaditya Majumder</a>
                 <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
             </div>
 
