@@ -9,8 +9,280 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    
-      
+    <script>
+        // Apply saved theme immediately to prevent FOUC
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark mode
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+      <style>
+        /* Default light mode variables */
+        :root 
+        {
+             --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --link-color: #66b3ff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+
+            ::-webkit-scrollbar 
+        {
+            background-color: transparent;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb 
+        {
+            background: linear-gradient(orange, orangered);
+            border-radius: 100px;
+
+        }  
+
+            .image img 
+        {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid transparent; /* Transparent to allow gradient */
+            background: linear-gradient(45deg, orange, orangered); /* Rainbow gradient */
+            background-clip: border-box;
+            padding: 2px; /* Space for gradient to show as border */
+            object-fit: cover;
+        }
+
+            .left {
+            flex: 1;
+            border: 2px solid orangered;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 0; /* Remove fixed margins */
+        }
+
+        .right 
+        {
+            flex: 1;
+            border: 2px solid orangered; 
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; 
+            font-size: 16px;
+        }
+
+            .text
+            {
+            flex: 1;
+            border: 2px solid orangered; /* Blue border */
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 16px;
+            margin-right:5rem;
+            flex-grow:1.36;
+            color: #eeebeb;
+        }
+
+        .text h1 
+        {
+            font-size: 50px;
+            color: #f8f7f7;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+        }
+        .text a 
+        {
+            font-size: 40px;
+            color: #ffffff;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+        }
+        .text p 
+        {
+            font-size: 17px;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .input-section p
+        {
+            margin: 0; /* Remove margin to eliminate space */
+            font-size: 16px;
+            font-family: 'JetBrains Mono', sans-serif;
+            color: #e6e5e5;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .word-a
+    {
+        color: lightskyblue
+    }
+            
+        }
+
+        /* Dark mode variables */
+        [data-theme="dark"] 
+        {
+           
+            --background-color: #e0d8d8;
+            --text-color: #000000;
+            --link-color: #0066cc;
+            --button-bg: #f0f0f0;
+            --button-text: #000000;
+
+            ::-webkit-scrollbar 
+            {
+                background-color: transparent;
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb 
+            {
+                background: linear-gradient(#248CC7, #69FAB4);
+                border-radius: 100px;
+
+            }  
+
+            .text
+            {
+                flex: 1;
+                border: 2px solid #1e90ff; /* Blue border */
+                border-radius: 15px;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+                font-size: 16px;
+                margin-right:5rem;
+                flex-grow:1.36;
+                color: #000000;
+            }
+
+            .image img 
+            {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid transparent; /* Transparent to allow gradient */
+            background: linear-gradient(45deg, #248CC7, #69FAB4); /* Rainbow gradient */
+            background-clip: border-box;
+            padding: 2px; /* Space for gradient to show as border */
+            object-fit: cover;
+            }
+
+            .left {
+            flex: 1;
+            border: 2px solid #1e90ff;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 0; /* Remove fixed margins */
+            }
+
+            .right 
+            {
+            flex: 1;
+            border: 2px solid #1e90ff; 
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; 
+            font-size: 16px;
+            }
+
+            .text h1 
+            {
+            font-size: 50px;
+            color: #000000;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+            }
+
+            .text a 
+            {
+            font-size: 40px;
+            color: #000000;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            }
+
+            .text p 
+            {
+            font-size: 17px;
+            color: #000000;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            }
+
+            .input-section p 
+            {
+            margin: 0; /* Remove margin to eliminate space */
+            font-size: 16px;
+            font-family: 'JetBrains Mono', sans-serif;
+            color: #000000;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            }
+
+            .word-a
+    {
+        color: rgb(133, 13, 13)
+    }
+           
+            
+        }
+
+        /* Apply variables to elements */
+        body 
+        {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 5px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+    </style>
 
         
     
@@ -57,6 +329,18 @@
     </style>
 
     <style>
+        .content-container {
+            max-width: 200px;
+            margin: 0px auto;
+            padding: 0px;
+            /* PNG as background, layered between body color and text */
+            background-image: url('hoo.png');
+            background-size: contain; /* Fit image without cropping */
+            background-position: center; /* Center image */
+            background-repeat: no-repeat; /* No tiling */
+            position: relative;
+            z-index: 1; /* Ensure container is above body */
+        }
 
         .container 
         {
@@ -64,11 +348,13 @@
             align-items: center; /* Vertically center content */
             gap: 20px; /* Space between image and text */
             padding: 20px;
+            z-index: 2;
         }
         .image {
             flex: 1;
             max-width: 50%;
             margin-left: 16rem; /* Remove fixed margin-left */
+          
         }
         .image img 
         {
@@ -80,6 +366,7 @@
             background-clip: border-box;
             padding: 2px; /* Space for gradient to show as border */
             object-fit: cover;
+           
         }
         .text 
         {
@@ -95,6 +382,7 @@
             margin-right:5rem;
             flex-grow:1.36;
             color: #e6e5e5;
+            z-index: 2;
         }
 
         .text h1 
@@ -195,15 +483,7 @@
 
     <!--BACKGROUND AND FONTS-->
     
-    <style>
-        body 
-        {
-            margin: 0;
-            color: rgb(0, 0, 0);
-            background: #222325;
-            
-        }
-    </style>
+    
 
     <!--BACKGROUND AND FONTS END-->
 
@@ -298,6 +578,8 @@
     {
         color: lightskyblue
     }
+
+    
   </style>
   <style>
          @media (max-width: 768px) {
@@ -413,7 +695,7 @@
 
 <body>
     <section>
-        
+        <button class="toggle-button" onclick="toggleTheme()"></button>
         <div class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="About.html">About</a>
@@ -421,36 +703,40 @@
             
             <a href="contacts.html">Contact</a>
         </div>
+        
 
         <div class="container">
             <div class="image">
                 <img src="your-image.jpeg" alt="Description of image">
             </div>
+            
             <div class="text">
+                
                 <h1>Greetings</h1>
                 <br>
                 <br>
-                <a>I am <span class="word-5">Debaditya Majumder</span> </a>
+                <a>I am <span class="word-a">Debaditya Majumder</span> </a>
                 <br>
                 <p>I am an aspiring mechanical engineer trying to debug my way through life's challenges.
                     This site is my 1s and 0s—my binary journey—to document and share 
                     experiences that help fellow students navigate their own academic circuits.
             </div>
         </div>
+        
 
     <div class="middle">
         <div class="left">
             <div class="input-section">
                 <java>
-                    <div>
-                        Try some Java for yourself!
-                    </div>
+                    <p>Try some Java for yourself!</p>
+                        
+                    
                     <div>
                         &nbsp;
                     </div>
-                    <div>
-                        INPUT:
-                    </div>
+                    <p>INPUT:</p>
+                        
+                    
                     <div>
                         &nbsp;
                     </div>
@@ -458,39 +744,44 @@
                         <span class="word-1">public class </span>
                         <span class="word-3">HelloWorld</span>
                     </div>
-                    <div>
+                    <p>
                         {
-                    </div>
+                        </p>
                     <div>
                         &nbsp;
                         &nbsp;
                         <span class="word-1">public static </span>
                         <span class="word-3">void </span>
                         <span class="word-2">main </span>
-                        (<span class="word-3">String</span>[]
-                        <span class="word-5">args</span>)
+                        <p>(</p><span class="word-3">String</span><p>[]</p>
+                        <span class="word-5">args</span><p>)</p>
                     </div>
                     <div>
                         &nbsp;
                         &nbsp;
-                        {
+                        <p>{</p>
                     </div>
+                        
+                    
                     <div>
                         &nbsp;
                         &nbsp;
                         &nbsp;
                         &nbsp;
-                        <span class="word-5">System</span>.<span class="word-5">out</span>.<span class="word-2">println</span>("
+                        <span class="word-5">System</span><p>.</p><span class="word-5">out</span><p>.</p><span class="word-2">println</span><p>("</p>
                         <input type="text" id="userInput" placeholder="Start typing..." oninput="updateText(this.value)">
-                        ");
+                        <p>");</p>
                     </div>
+                    
                     <div>
                         &nbsp;
                         &nbsp;
-                        }
+                        <p>}</p>
                     </div>
                     <div>
+                    <p>
                         }
+                    </p>
                     </div>
                 </java>
             </div>
@@ -504,6 +795,31 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Function to toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText();
+        }
+
+        // Function to update button text
+        function updateButtonText() {
+            const button = document.querySelector('.toggle-button');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            button.textContent = currentTheme === 'dark' ? '🌑' : '☀️';
+        }
+
+        // Apply saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText();
+        });
+    </script>
 
     
 
@@ -529,7 +845,7 @@
         </script>
 
         <div class="nav">
-            © 
+            
             <a href= "index.html"> © Debaditya Majumder</a>
             <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
         </div>

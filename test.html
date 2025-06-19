@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Comment System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Base background color */
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            /* PNG as background, layered between body color and text */
+            background-image: url('hoo.png');
+            background-size: contain; /* Fit image without cropping */
+            background-position: center; /* Center image */
+            background-repeat: no-repeat; /* No tiling */
+            position: relative;
+            z-index: 1; /* Ensure container is above body */
+        }
+        /* Semi-transparent backgrounds for readability */
+        #comment-form, #comments-list {
+            background: rgba(255, 255, 255, 0.85); /* White, 85% opacity */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2; /* Text above PNG */
+        }
+        h1, p {
+            background: rgba(255, 255, 255, 0.85); /* Match form/comments */
+            padding: 10px;
+            border-radius: 4px;
+            position: relative;
+            z-index: 2; /* Text above PNG */
+        }
+        #comment-form input, #comment-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        #comment-form button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #comment-form button:hover {
+            background: #218838;
+        }
+        #message {
+            margin-top: 10px;
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        .comment-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            background: rgba(249, 249, 249, 0.9);
+        }
+        .comment-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>My Site</h1>
+        <p>Welcome! Leave a comment below.</p>
+        
+        
+        
+        <div id="comments-list">
+            <h3>Comments</h3>
+            <ul id="commentsList"></ul>
+        </div>
+    </div>
+
+    <script src="comments.js"></script>
+</body>
+</html>

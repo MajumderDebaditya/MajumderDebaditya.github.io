@@ -9,86 +9,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
         <link rel="icon" href="D.jpeg">
-        <script>
-        // Apply saved theme immediately to prevent FOUC
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark mode
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
-    </script>
-        <style>
+<style>
         :root 
         {
-            
-             --background-color: #1a1a1a;
-            --text-color: #ffffff;
-            --link-color: #66b3ff;
-            --button-bg: #333333;
-            --button-text: #ffffff;
-
-             ::-webkit-scrollbar 
-        {
-            background-color: transparent;
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb 
-        {
-            background: linear-gradient(orange, orangered);
-            border-radius: 100px;
-
-        }  
-
-            body 
-            {
-                margin: 0;
-                color: rgb(0, 0, 0);
-                background: #222325;
-            }
- 
-                 .tex
-             {
-                display: flex;
-            justify-content: center;
-            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
-            font-size: 20px;
-            color: #d4d0d0;
-            }
-            .t{
-                display: flex;
-            justify-content: left;
-            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
-            font-size: 20px;
-            color: #d4d1d1;
-            }
-
-            .tex h1{
-                font-size: 50px;
-            font-family: 'Varela Round', sans-serif;
-            color: #e4dddd;
-            font-weight: 400; /* Varela Round has one weight (Regular) */
-            }
-
-           
-            
-            .t a{
-                color: #4744f8;
-            }
-            .t p 
-        {
-            font-size: 17px;
-            color: #fffcfc;
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-        }
-    }
-
-        /* Dark mode variables */
-        [data-theme="dark"] 
-        {
-           
-            
-       --background-color: #ffffff;
+            --background-color: #ffffff;
             --text-color: #000000;
             --link-color: #0066cc;
             --button-bg: #f0f0f0;
@@ -150,6 +74,75 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
         }
+            
+    }
+
+        /* Dark mode variables */
+        [data-theme="dark"] 
+        {
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --link-color: #66b3ff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+
+             ::-webkit-scrollbar 
+        {
+            background-color: transparent;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb 
+        {
+            background: linear-gradient(orange, orangered);
+            border-radius: 100px;
+
+        }  
+
+            body 
+            {
+                margin: 0;
+                color: rgb(0, 0, 0);
+                background: #222325;
+            }
+ 
+                 .tex
+             {
+                display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #d4d0d0;
+            }
+            .t{
+                display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #d4d1d1;
+            }
+
+            .tex h1{
+                font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            color: #e4dddd;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+            }
+
+           
+            
+            .t a{
+                color: #4744f8;
+            }
+            .t p 
+        {
+            font-size: 17px;
+            color: #fffcfc;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+            
+       
            
             
     }
@@ -173,13 +166,13 @@
 
         .toggle-button {
             position: fixed;
-            top: 5px;
+            top: 10px;
             right: 10px;
             padding: 10px 20px;
             background-color: var(--button-bg);
             color: var(--button-text);
             border: none;
-            border-radius: 25px;
+            border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -194,6 +187,8 @@
             padding: 20px;
         }
     </style>
+    
+
 
         <style>
 
@@ -257,7 +252,8 @@
             }
         </style>
         <style>
-            .tex{
+            .tex
+            {
                 display: flex;
             justify-content: center;
             font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
@@ -397,9 +393,9 @@
 
     <body>
         <section>
-            <button class="toggle-button" onclick="toggleTheme()"></button>
+             <button class="toggle-button" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
             <div class="navbar">
-                <a href="index.html">Home</a>
+                <a href="new.html">Home</a>
                 <a href="About.html">About</a>
                 <a href="problems.html"class="active">Problems</a>
             
@@ -457,8 +453,7 @@
                 <a href= "index.html">  © Debaditya Majumder</a>
                 <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
             </div>
-
-            <script>
+<script>
         // Function to toggle theme
         function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -472,7 +467,7 @@
         function updateButtonText() {
             const button = document.querySelector('.toggle-button');
             const currentTheme = document.documentElement.getAttribute('data-theme');
-            button.textContent = currentTheme === 'dark' ? '🌑' : '☀️';
+            button.textContent = currentTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
         }
 
         // Apply saved theme on page load
@@ -482,7 +477,6 @@
             updateButtonText();
         });
     </script>
-
 
         </section>
 

@@ -8,17 +8,219 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="icon" href="D.jpeg">
-    <style>
-        /* General styles */
-        body {
+<script>
+        // Apply saved theme immediately to prevent FOUC
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark mode
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+     <style>
+        /* Default light mode variables */
+        :root 
+        {
+           --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --link-color: #66b3ff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+
+            body {
             margin: 0;
             color: #000;
-            background: #222325;
+            background: #1a1a1a;
             font-family: 'Varela Round', 'Roboto', 'Arial', sans-serif;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
+
+            ::-webkit-scrollbar 
+        {
+            background-color: transparent;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb 
+        {
+            background: linear-gradient(orange, orangered);
+            border-radius: 100px;
+
+        }  
+
+            .t {
+            display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+        }
+
+        .t h1 {
+            font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+            color: #e6e5e5;
+        }
+
+        .t a {
+            font-size: 40px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            color: #e6e5e5;
+        }
+
+        .text {
+            display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+            color: #e6e5e5;
+        }
+
+        .text p {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+            line-height: 1.5; /* Improve readability */
+            color: #e6e5e5;
+        }
+
+        .word-5
+    {
+        color: rgb(248, 250, 135)
+    }
+            
+        }
+
+        /* Dark mode variables */
+        [data-theme="dark"] 
+        {
+            
+        --background-color: #e0d8d8;
+            --text-color: #000000;
+            --link-color: #0066cc;
+            --button-bg: #f0f0f0;
+            --button-text: #000000;
+
+            body {
+            margin: 0;
+            color: #000;
+            background: #e0d8d8;
+            font-family: 'Varela Round', 'Roboto', 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+            ::-webkit-scrollbar 
+            {
+                background-color: transparent;
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb 
+            {
+                background: linear-gradient(#248CC7, #69FAB4);
+                border-radius: 100px;
+
+            }  
+
+            .t {
+            display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+        }
+
+        .t h1 {
+            font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+            color: #000000;
+        }
+
+        .t a {
+            font-size: 40px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .text {
+            display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif;
+            font-size: 16px;
+            color: #000000;
+        }
+
+        .text p {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            margin: 0.5rem 0;
+            line-height: 1.5; /* Improve readability */
+            color: #000000;
+        }
+
+        .word-5
+    {
+        color: rgb(224, 62, 151)
+    }
+           
+            
+        }
+
+        /* Apply variables to elements */
+        body 
+        {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 5px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+    </style>
+
+    <style>
+        /* General styles */
+        
 
         section {
             flex: 1;
@@ -222,6 +424,7 @@
 </head>
 <body>
     <section>
+        <button class="toggle-button" onclick="toggleTheme()"></button>
         <div class="navbar">
             <a href="index.html">Home</a>
             <a href="About.html" class="active">About</a>
@@ -272,6 +475,31 @@
             © <a href="index.html">  © Debaditya Majumder</a>
             <a href="https://www.linkedin.com/in/debaditya-majumder-71a204319/">LinkedIn</a>
         </div>
+
+        <script>
+        // Function to toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText();
+        }
+
+        // Function to update button text
+        function updateButtonText() {
+            const button = document.querySelector('.toggle-button');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            button.textContent = currentTheme === 'dark' ? '🌑' : '☀️';
+        }
+
+        // Apply saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText();
+        });
+    </script>
     </section>
 </body>
 </html>

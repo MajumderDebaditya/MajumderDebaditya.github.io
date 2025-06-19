@@ -9,6 +9,238 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
         <link rel="icon" href="D.jpeg">
+        <script>
+        // Apply saved theme immediately to prevent FOUC
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark mode
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+         <style>
+        :root 
+        {
+            
+             --background-color: #1a1a1a;
+            --text-color: #ffffff;
+            --link-color: #66b3ff;
+            --button-bg: #333333;
+            --button-text: #ffffff;
+
+             ::-webkit-scrollbar 
+        {
+            background-color: transparent;
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb 
+        {
+            background: linear-gradient(orange, orangered);
+            border-radius: 100px;
+
+        }  
+
+            body 
+            {
+                margin: 0;
+                color: rgb(0, 0, 0);
+                background: #222325;
+            }
+ 
+                .tex{
+                display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #e6e5e5;
+            }
+            .t{
+                display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #e6e5e5;
+            }
+
+            .tex h1{
+                font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+            color: #e6e5e5;
+            }
+
+            .border
+            {
+                margin-left: 200px;
+                margin-right: 200px;
+                    border: 2px solid #1eff4f; /* Blue border */
+            border-radius: 15px;
+            padding: 15px;
+            }
+            .t p 
+        {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .copy-btn {
+                padding: 0.5rem 1rem;
+                background: #575757;
+                color: lightskyblue;
+                border: none;
+                border-radius: 5px;
+                font-family: 'Varela Round', 'Arial', sans-serif;
+                font-size: 0.9rem;
+                text-decoration: none;
+                cursor: pointer;
+                margin-top: 0.5rem;
+                transition: background 0.3s;
+            }
+
+            .comments {
+                justify-content: center;
+                margin-top: 1rem;
+                padding: 1rem;
+                background: #222325;
+                border-radius: 5px;
+            }
+    }
+
+        /* Dark mode variables */
+        [data-theme="dark"] 
+        {
+           
+            
+       --background-color: #ffffff;
+            --text-color: #000000;
+            --link-color: #0066cc;
+            --button-bg: #f0f0f0;
+            --button-text: #000000;
+
+            ::-webkit-scrollbar 
+            {
+                background-color: transparent;
+                width: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb 
+            {
+                background: linear-gradient(#248CC7, #69FAB4);
+                border-radius: 100px;
+
+            }  
+
+            body 
+            {
+                margin: 0;
+                color: rgb(0, 0, 0);
+                background: #e0d8d8;
+            }
+            
+
+             .tex{
+                display: flex;
+            justify-content: center;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #000000;
+            }
+            .t{
+                display: flex;
+            justify-content: left;
+            font-family: 'Varela Round', 'Roboto', 'JetBrains Mono', sans-serif; /* Apply Varela Round */
+            font-size: 20px;
+            color: #000000;
+            }
+
+            .tex h1{
+                font-size: 50px;
+            font-family: 'Varela Round', sans-serif;
+            font-weight: 400; /* Varela Round has one weight (Regular) */
+            color: #000000;
+            }
+
+            .border
+            {
+                margin-left: 200px;
+                margin-right: 200px;
+                    border: 2px solid #02360d; /* Blue border */
+            border-radius: 15px;
+            padding: 15px;
+            }
+            .t p 
+        {
+            font-size: 17px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+        }
+
+        .copy-btn {
+                padding: 0.5rem 1rem;
+                background: #ccc6c6;
+                color: black;
+                border: none;
+                border-radius: 5px;
+                font-family: 'Varela Round', 'Arial', sans-serif;
+                font-size: 0.9rem;
+                text-decoration: none;
+                cursor: pointer;
+                margin-top: 0.5rem;
+                transition: background 0.3s;
+            }
+
+            .comments {
+                justify-content: center;
+                margin-top: 1rem;
+                padding: 1rem;
+                background: #e0d8d8;
+                border-radius: 5px;
+            }
+           
+            
+    }
+
+     body 
+        {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 5px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+    </style>
+
         <style>
 
             ::-webkit-scrollbar 
@@ -25,14 +257,7 @@
 
         </style>
 
-        <style>
-            body 
-            {
-                margin: 0;
-                color: rgb(0, 0, 0);
-                background: #222325;
-            }
-        </style>
+        
 
         <style>
             /* Styling for the navigation bar */
@@ -92,6 +317,7 @@
             {
                 background-color: #1b2020;
             border-radius: 15px;
+            
             }
         </style>
 
@@ -161,6 +387,7 @@
 
             .copy-btn:hover {
                 background: #1b2020;
+                color: lightskyblue;
             }
 
             .copy-btn.copied {
@@ -288,6 +515,7 @@
     </head>
     <body>
         <section>
+            <button class="toggle-button" onclick="toggleTheme()"></button>
             <div class="navbar">
                 <a href="index.html">Home</a>
                 <a href="About.html">About</a>
@@ -302,8 +530,8 @@
             </div>
             <div class="tex">
             <div class="comments">
-                1. majumderdebaditya@gmail.com
-                <button class="copy-btn" onclick="copyToClipboard()" aria-label="Copy preset text to clipboard">Copy Email</button>
+                1.
+                <button class="copy-btn" onclick="copyToClipboard()" aria-label="Copy preset text to clipboard">majumderdebaditya@gmail.com</button>
             </div>
             </div>
             
@@ -329,7 +557,7 @@
                         button.textContent = 'Copied!';
                         button.classList.add('copied');
                         setTimeout(() => {
-                            button.textContent = 'Copy Email';
+                            button.textContent = 'majumderdebaditya@gmail.com';
                             button.classList.remove('copied');
                         }, 2000);
                     }).catch(err => {
@@ -351,7 +579,7 @@
                         button.textContent = 'Copied!';
                         button.classList.add('copied');
                         setTimeout(() => {
-                            button.textContent = 'Copy Email';
+                            button.textContent = 'majumderdebaditya@gmail.com';
                             button.classList.remove('copied');
                         }, 2000);
                     } catch (err) {
@@ -362,6 +590,30 @@
                 }
             }
         </script>
+        <script>
+        // Function to toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateButtonText();
+        }
+
+        // Function to update button text
+        function updateButtonText() {
+            const button = document.querySelector('.toggle-button');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            button.textContent = currentTheme === 'dark' ? '🌑' : '☀️';
+        }
+
+        // Apply saved theme on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateButtonText();
+        });
+    </script>
 
             <div class="nav">
                 © 
